@@ -8,6 +8,7 @@ Console.WriteLine($"Вопросов: {Questions.All.Count}. Отвечай но
 Console.WriteLine();
 
 int correct = 0;
+var timer = System.Diagnostics.Stopwatch.StartNew();
 for (int i = 0; i < Questions.All.Count; i++)
 {
     Question q = Questions.All[i];
@@ -30,7 +31,7 @@ for (int i = 0; i < Questions.All.Count; i++)
 
 int total = Questions.All.Count;
 int percent = correct * 100 / total;
-Print($"Итог: {correct} из {total} — {percent}%", percent >= 80 ? ConsoleColor.Green : ConsoleColor.Red);
+Print($"Итог: {correct} из {total} — {percent}% за {(int)timer.Elapsed.TotalSeconds} с", percent >= 80 ? ConsoleColor.Green : ConsoleColor.Red);
 Print(percent >= 80 ? "Отлично, GitHub тебе по плечу!" : "Перечитай слайды лекции и попробуй ещё раз.", ConsoleColor.Cyan);
 
 // Спрашивает число от min до max, пока не введут правильно.
