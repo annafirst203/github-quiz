@@ -35,6 +35,6 @@ public static class Questions
 
         new("Когда запускается workflow из файла ci.yml?",
             ["Только когда его запускают вручную", "При событиях из блока on: — push и pull_request в main", "Раз в сутки по расписанию"],
-            4),
+            2),
     ];
 }
